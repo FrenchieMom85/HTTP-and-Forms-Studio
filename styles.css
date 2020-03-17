@@ -1,0 +1,11 @@
+html {
+    background-color: grey;
+}
+
+form {
+    font-size: larger;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    margin-top: 200px;
+    
+}
