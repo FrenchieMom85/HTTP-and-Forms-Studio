@@ -3,17 +3,50 @@
 <head>
 	<meta charset="utf-8">
 	<script>
-		// TODO: create a handler
-    window.addEventListener("load", function(){
-        // TODO: register the handler
-    });
+		function setSearchEngine() {
+			document.querySelector("input[name=engine]:checked")
+			let actions = {
+				"google": "https://www.google.com/",
+				"duckDuckgo": "https://duckduckgo.com/",
+				"bing": "https://www.bing.com/",
+				"ask": "https://www.ask.com/"
+			};
+			let radioSelect = document.querySelector('input[name=engine]:checked');
+			let actionURL = actions[radioSelect.value];
+			let searchForm = document.getElementById('searchForm');
+			searchForm.setAttribute('action', actionURL);
+		};
+
+		window.addEventListener("load", function () {
+			let searchForm = document.getElementById('searchForm');
+			searchForm.addEventListener('submit', setSearchEngine);
+		});
 	</script>
 </head>
 
 <body>
 
 	<form id="searchForm">
-    <!-- TODO: add form elements -->
+		<input type="text" name="q" />
+		<label><input type="radio" name="engine" value="google">Google </label>
+		<label><input type="radio" name="engine" value="duckDuckgo">DuckDuckGo </label>
+		<label><input type="radio" name="engine" value="bing">Bing </label>
+		<label><input type="radio" name="engine" value="ask">Ask </label>
+		<button id="submit">Go!</button>
 	</form>
 
 </body>
+
+
+
+<!-- let actionURL;
+
+if (engine === "google") {
+   actionURL = "https://www.google.com/";
+} else if (engine === "bing") {
+   actionURL = "https://bing.com/";
+} else if (engine === "duckduckgo") {
+	actionURL = "https://duckduckgo.com/";
+} else if (engine === "ask") {
+	actionURL = "https://ask.com/";
+}  -->
