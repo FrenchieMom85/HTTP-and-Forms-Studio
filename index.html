@@ -21,11 +21,6 @@
 		window.addEventListener("load", function () {
 			let searchForm = document.getElementById('searchForm');
 			searchForm.addEventListener('submit', setSearchEngine);
-			let form = document.querySelector("form");
-         	form.addEventListener("submit", function(event) {
-			alert("Search bar is empty");
-			event.preventDefault();
-         	});
 		});
 	</script>
 </head>
@@ -33,7 +28,7 @@
 <body>
 
 	<form id="searchForm">
-		<input type="text" name="q" placeholder="Enter search question"/>
+		<input id ="search" type="text" name="q" placeholder="Enter search question" required/>
 		<label><input type="radio" name="engine" value="google" required>Google </label>
 		<label><input type="radio" name="engine" value="duckDuckgo" required>DuckDuckGo </label>
 		<label><input type="radio" name="engine" value="bing" required>Bing </label>
